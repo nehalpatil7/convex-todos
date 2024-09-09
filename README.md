@@ -48,44 +48,45 @@ cd convex-todos
 3. Install dependencies:
 ```bash
 npm install
+npm i -s convex
 ```
 
 4. Set up environment variables:
-Create a `.env` file in the root directory of your project & add the following environment variables:
+Create a `.env.local` file in the root directory of your project & add the following environment variables:
 
 ```bash
+# Deployment used by `npx convex dev`
 NEXT_PUBLIC_OPENROUTER_ENDPOINT=your_openrouter_endpoint
 OPENROUTER_API_KEY=your_openrouter_api_key
 
-FIREBASE_API_KEY=your_firebase_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET_NAME=your_firebase_storage_bucket
-FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-FIREBASE_APP_ID=your_firebase_app_id
-FIREBASE_MEASUREMENT_ID=your_firebase_measurement_id
+CONVEX_DEPLOYMENT=your_convex_deployment_project
+NEXT_PUBLIC_CONVEX_URL=your_convex_url
 ```
 
-
-Replace the placeholder values (`your_firebase_api_key`, `your_firebase_auth_domain`, etc.) with your actual Firebase and OpenRouter credentials.
+Replace the placeholder values (`your_convex_deployment_project`, `your_convex_url`, etc.) with your actual Convex credentials.
 
 To set up your Firebase project and obtain these credentials:
-i. Go to the [Firebase Console](https://console.firebase.google.com/)
+i. Go to the [Convex Console](https://dashboard.convex.dev/)
 ii. Click on "Add project" or select an existing project
 iii. Follow the setup wizard to create your project
-iv. Once your project is ready, click on the web icon (`</>`) to add a web app to your project
-v. Register your app and Firebase will provide you with the configuration object containing these values
+iv. Alternatively, you can also initialize convex by running 'npm convex dev' and giving it access to your github account and eventually convex console.
+v. Then, as you define your schema in your convex/schema.ts file, it automatically syncs back to your convex dashboard.
+vi. It will also give you the link to the convex dashboard, as you initialize it in your terminal.
 
 For the OpenAI API key, sign up at the [OpenAI website](https://openai.com/api/) to get your API key.
 
 
 5. Run the development server:
-
 ```bash
 npm run dev
 ```
 
-6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Run the backend convex development server:
+```bash
+npx convex dev
+```
+
+7. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 🐛 Troubleshooting
 
