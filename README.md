@@ -107,9 +107,13 @@ rm -rf .next
 npm run build
 ```
 
-4. For OpenAI API issues, verify that your API key is correctly set in the `.env` file and that you have sufficient credits in your OpenAI account.
+4. For OpenAI API issues, verify that your API key is correctly set in the `.env.local` file and that you have sufficient credits in your OpenAI account.
 
-6. If you're encountering CORS issues with the OpenAI API, ensure that your serverless function (in `pages/api/object-detection.js`) is correctly configured to handle the API request.
+5. For Convex issues, verify your backend is successfully initialized and up and running in the background.
+
+6. While deploying your application on Vercel or any platform, you need to update the build commands to also run the convex backend along with the frontend. You also need to update the env variables in Vercel.
+
+7. If you're encountering CORS issues with the OpenAI API, ensure that your serverless function (in `pages/api/object-detection.js`) is correctly configured to handle the API request.
 
 
 ## 👤 Author
