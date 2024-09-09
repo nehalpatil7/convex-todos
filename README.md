@@ -4,7 +4,7 @@
 
 This project is an To-Do task management system which utilizes Convex as the frontend and backend, developed as part of the Headstarter AI Fellowship. It features real-time to-do lists management, sharing across multiple devices, and secured using user auth and session control.
 
-![Dashboard Screenshot](pantry_tracker_homepage.png)
+![Dashboard Screenshot](sample.png)
 
 ## 🌟 Features
 
@@ -20,7 +20,7 @@ This project is an To-Do task management system which utilizes Convex as the fro
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Material-UI](https://material-ui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [Convex](https://www.convex.dev/)
 - [OpenRouter API](https://openrouter.ai/docs/quick-start)
 
@@ -112,8 +112,6 @@ npm run build
 5. For Convex issues, verify your backend is successfully initialized and up and running in the background.
 
 6. While deploying your application on Vercel or any platform, you need to update the build commands to also run the convex backend along with the frontend. You also need to update the env variables in Vercel.
-
-7. If you're encountering CORS issues with the OpenAI API, ensure that your serverless function (in `pages/api/object-detection.js`) is correctly configured to handle the API request.
 
 
 ## 👤 Author
