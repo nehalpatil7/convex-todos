@@ -4,21 +4,31 @@ import { NewToDoForm } from "./_components/new-todo-form";
 import { ToDoList } from "./_components/to-do-list";
 import Loader from "./_components/loader";
 import { useState, useEffect, useRef } from 'react';
-import { FaSquarePlus, FaUser } from "react-icons/fa6";
 import { Authenticated, Unauthenticated, AuthLoading } from "convex/react";
-import { SignInButton, UserButton } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
+import Sidebar from './_components/sidebar';
+import { GenerateTodoForm } from './_components/generate-todos';
+import FloatingButtons from './_components/floating-buttons';
+import UnauthenticatedContent from './_components/unauth';
 
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isAiSidebarOpen, setIsAiSidebarOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+  const handleAiSidebarToggle = () => {
+    setIsAiSidebarOpen(!isAiSidebarOpen);
+  };
 
   const closeSidebar = () => {
     setIsSidebarOpen(false);
+  };
+  const closeAiSidebar = () => {
+    setIsAiSidebarOpen(false);
   };
 
   // Close sidebar if clicked outside
@@ -69,71 +79,37 @@ export default function Home() {
             </div>
             <div className="w-1/2 bg-gray-200 p-4 shadow-lg">
               <NewToDoForm />
+              <hr className="my-4 border-gray-300" />
+              <GenerateTodoForm />
             </div>
           </div>
 
           {/* Mobile floating button and sidebar */}
           <div className="lg:hidden">
-            <ToDoList />
-
-            {/* Floating button */}
-            <button
-              className="fixed bottom-5 right-5 bg-blue-500 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center"
-              onClick={handleSidebarToggle}
-            >
-              <FaSquarePlus />
-            </button>
-
-            {/* Sidebar */}
-            <div
-              ref={sidebarRef}
-              className={`fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg transform transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}
-            >
-              <div className="p-4">
-                <button
-                  className="text-red-500 mb-4"
-                  onClick={handleSidebarToggle}
-                >
-                  Close
-                </button>
-                <NewToDoForm closeSidebar={closeSidebar} />
-              </div>
+            <div className='pt-4'>
+              <ToDoList />
             </div>
+
+            {/* Floating button for New ToDo Form */}
+            <FloatingButtons
+              onNewTodoClick={handleSidebarToggle}
+              onAiToolClick={handleAiSidebarToggle}
+            />
+
+            {/* Sidebar for New ToDo Form */}
+            <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar}>
+              <NewToDoForm closeSidebar={closeSidebar} />
+            </Sidebar>
+
+            {/* Sidebar for AI Tool */}
+            <Sidebar isOpen={isAiSidebarOpen} onClose={closeAiSidebar}>
+              <GenerateTodoForm closeAiSidebar={closeAiSidebar} />
+            </Sidebar>
           </div>
         </Authenticated>
 
         <Unauthenticated>
-          <div className="relative flex h-screen overflow-hidden">
-            {/* Left half with image */}
-            <div className="w-full lg:w-1/2 max-h-screen h-full">
-              <img
-                src="/images/todo.webp"
-                alt="To-Do List"
-                className="w-full h-full object-cover"
-              />
-              {/* Overlay content for small screens */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center p-4 lg:hidden">
-                <p className="text-gray-600 text-center mb-4">Please Sign In to continue</p>
-                <SignInButton>
-                  <button className="flex items-center p-3 bg-blue-500 text-white rounded-full gap-2">
-                    <span>Sign In</span>
-                    <FaUser />
-                  </button>
-                </SignInButton>
-              </div>
-            </div>
-
-            {/* Right half with Sign In content on large screens */}
-            <div className="hidden lg:flex w-1/2 h-full flex-col justify-center items-center p-10 bg-green-100">
-              <p className="text-gray-600 text-center mb-4">Please Sign In to continue</p>
-              <SignInButton>
-                <button className="flex items-center p-3 bg-blue-500 text-white rounded-full gap-2">
-                  <span>Sign In</span>
-                  <FaUser />
-                </button>
-              </SignInButton>
-            </div>
-          </div>
+          <UnauthenticatedContent />
         </Unauthenticated>
 
         <AuthLoading>
@@ -144,5 +120,5 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
 

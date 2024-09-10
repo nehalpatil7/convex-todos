@@ -22,7 +22,7 @@ export function NewToDoForm({ closeSidebar }: { closeSidebar?: () => void }) {
     return (
         <div className="lg:w-full mt-10 flex justify-center self-center">
             <form onSubmit={handleSubmit} className="w-full max-w-md">
-                <h3 className="pb-5 text-xl font-bold text-black">Add new todos:</h3>
+                <h3 className="pb-5 text-xl font-bold text-black">Add new todos</h3>
                 <div className="flex flex-col gap-2 lg:gap-6">
                     <div className="flex-1">
                         <label className="text-sm font-semibold" htmlFor="title">Title</label>
@@ -53,4 +53,4 @@ export function NewToDoForm({ closeSidebar }: { closeSidebar?: () => void }) {
             </form>
         </div>
     );
-}
+};

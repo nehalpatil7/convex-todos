@@ -9,19 +9,23 @@ export function ToDoList() {
 
     return (
         <div className="w-full max-h-[80vh] overflow-y-auto pl-3 pr-3">
-            <ul className="space-y-2">
-                {todos?.map(({ _id, title, description, completed }, index) => (
-                    <ToDoItem
-                        key={index}
-                        id={_id}
-                        title={title}
-                        description={description}
-                        completed={completed}
-                    />
-                ))}
-            </ul>
+            {todos && todos.length === 0 ? (
+                <p className="text-xl font-semi-bold text-center text-gray-500 pt-10">You're all caught up.</p>
+            ) : (
+                <ul className="space-y-2">
+                    {todos?.map(({ _id, title, description, completed }, index) => (
+                        <ToDoItem
+                            key={index}
+                            id={_id}
+                            title={title}
+                            description={description}
+                            completed={completed}
+                        />
+                    ))}
+                </ul>
+            )}
         </div>
-    )
+    );
 }
 
 function ToDoItem({ id, title, description, completed }: {
@@ -47,5 +51,5 @@ function ToDoItem({ id, title, description, completed }: {
                 <button className="text-red-500" type="button" onClick={e => removeTodo({ id })}><FaTrash /></button>
             </div>
         </li>
-    )
+    );
 }
