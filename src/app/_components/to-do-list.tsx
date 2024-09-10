@@ -39,7 +39,7 @@ function ToDoItem({ id, title, description, completed }: {
                 checked={completed}
                 onChange={e => updateTodo({ id, completed: e.target.checked })}
             />
-            <div>
+            <div className="pl-2">
                 <p className="font-semibold">{title}</p>
                 <p className="text-sm text-gray-600">{description}</p>
             </div>
