@@ -4,7 +4,7 @@
 
 This project is an To-Do task management system which utilizes Convex as the frontend and backend, developed as part of the Headstarter AI Fellowship. It features real-time to-do lists management, sharing across multiple devices, and secured using user auth and session control.
 
-![Dashboard Screenshot](sample.png)
+![Dashboard Screenshot](convex_todos_home.png)
 
 ## 🌟 Features
 
@@ -26,14 +26,13 @@ This project is an To-Do task management system which utilizes Convex as the fro
 
 ## 🚀 Live Demo
 
-Check out the video demo on YouTube: [\[Click Here!\]](https://www.youtube.com)
+Check out the video demo on YouTube: [\[Click Here!\]](https://youtu.be/bJ4aktrGuqQ)
 
 ## 🏁 Getting Started
 
 To get a local copy up and running, follow these steps:
 
 1. Clone the repository:
-
 
 ```bash
 git clone https://github.com/nehalpatil7/convex-todos.git
@@ -55,15 +54,21 @@ npm i -s convex
 Create a `.env.local` file in the root directory of your project & add the following environment variables:
 
 ```bash
+# Convex specs
 # Deployment used by `npx convex dev`
+CONVEX_DEPLOYMENT=your_convex_deployment_project
+NEXT_PUBLIC_CONVEX_URL=your_convex_url
+
+# Open Router specs
 NEXT_PUBLIC_OPENROUTER_ENDPOINT=your_openrouter_endpoint
 OPENROUTER_API_KEY=your_openrouter_api_key
 
-CONVEX_DEPLOYMENT=your_convex_deployment_project
-NEXT_PUBLIC_CONVEX_URL=your_convex_url
+# Clerk specs
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_api_key
+CLERK_SECRET_KEY=your_clerk_secret
 ```
 
-Replace the placeholder values (`your_convex_deployment_project`, `your_convex_url`, etc.) with your actual Convex credentials.
+Replace the placeholder values (`your_convex_deployment_project`, `your_convex_url`, etc.) with your actual Convex credentials and similar with other keys.
 
 To set up your Firebase project and obtain these credentials:
 i. Go to the [Convex Console](https://dashboard.convex.dev/)
@@ -74,6 +79,7 @@ v. Then, as you define your schema in your convex/schema.ts file, it automatical
 vi. It will also give you the link to the convex dashboard, as you initialize it in your terminal.
 
 For the OpenAI API key, sign up at the [OpenAI website](https://openai.com/api/) to get your API key.
+Alternatively, you may also use OpenRouter's OpenAI API key, sign up at the [OpenRouter website](https://openrouter.ai/) to get your API key and access from a wide range of LLM models.
 
 
 5. Run the development server:
