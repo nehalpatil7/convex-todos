@@ -2,7 +2,7 @@
 import './globals.css';
 import { NewToDoForm } from "./_components/new-todo-form";
 import { ToDoList } from "./_components/to-do-list";
-import Loader from "./_components/Loader";
+import Loader from "./_components/loader";
 import { useState, useEffect, useRef } from 'react';
 import { FaSquarePlus, FaUser } from "react-icons/fa6";
 import { Authenticated, Unauthenticated, AuthLoading } from "convex/react";
