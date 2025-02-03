@@ -1,13 +1,15 @@
 # To-Do task management system using Convex
 
-## Project Overview
-
+## Project Overvie
 This project is an To-Do task management system which utilizes Convex as the frontend and backend, developed as part of the Headstarter AI Fellowship. It features real-time to-do lists management, sharing across multiple devices, and secured using user auth and session control.
+
+<p align="center">
+    <img src="https://skillicons.dev/icons?i=git,js,ts,nodejs,html,tailwind,convex,vercel" />
+</p>
 
 ![Dashboard Screenshot](convex_todos_home.png)
 
 ## 🌟 Features
-
 - real-time to-do lists management
 - sharing across multiple devices
 - secured using user auth
@@ -16,7 +18,6 @@ This project is an To-Do task management system which utilizes Convex as the fro
 - Responsive design for various screen sizes
 
 ## 🛠️ Technologies Used
-
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -25,21 +26,17 @@ This project is an To-Do task management system which utilizes Convex as the fro
 - [OpenRouter API](https://openrouter.ai/docs/quick-start)
 
 ## 🚀 Live Demo
-
 Check out the video demo on YouTube: [\[Click Here!\]](https://youtu.be/bJ4aktrGuqQ)
 
 ## 🏁 Getting Started
-
 To get a local copy up and running, follow these steps:
 
 1. Clone the repository:
-
 ```bash
 git clone https://github.com/nehalpatil7/convex-todos.git
 ```
 
 2. Navigate to the project directory:
-
 ```bash
 cd convex-todos
 ```
@@ -95,7 +92,6 @@ npx convex dev
 7. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 🐛 Troubleshooting
-
 If you encounter any issues while setting up or running the project, try the following:
 
 1. Ensure all dependencies are installed:
@@ -123,12 +119,10 @@ npm run build
 ## 👤 Author
 
 **Nehal Patil**
-
 - LinkedIn: [Nehal Patil](https://www.linkedin.com/in/nehalpatil7/)
 - GitHub: [@nehalpatil7](https://github.com/nehalpatil7)
 
 ## 🙏 Acknowledgments
-
 - Headstarter AI Fellowship for the opportunity and support
 - OpenAI for providing the powerful API
 - All contributors and reviewers
