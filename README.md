@@ -4,7 +4,7 @@
 This project is an To-Do task management system which utilizes Convex as the frontend and backend, developed as part of the Headstarter AI Fellowship. It features real-time to-do lists management, sharing across multiple devices, and secured using user auth and session control.
 
 <p align="center">
-    <img src="https://skillicons.dev/icons?i=git,js,ts,nodejs,html,tailwind,convex,vercel" />
+    <img src="https://skillicons.dev/icons?i=git,js,ts,nodejs,html,tailwind,vercel,convex" />
 </p>
 
 ![Dashboard Screenshot](convex_todos_home.png)
